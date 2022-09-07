@@ -11,6 +11,49 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
+<!--<div th:replace="fragments :: job-table"></div>-->
+<!--    <th:block th:each="choice : ${jobs}">-->
+    <table th:each="choice : ${jobs}" class="job-listing">
+        <tr>
+                <td>ID</td>
+                <td th:text = "${choice.id}"></td>
+        </tr>
+        <tr>
+                <td>Name</td>
+                <td th:text = "${choice.name}"></td>
+        </tr>
+        <tr>
+                <td>Employer</td>
+                <td th:text = "${choice.employer}"></td>
+        </tr>
+        <tr>
+                <td>Location</td>
+                <td th:text = "${choice.location}"></td>
+        </tr>
+        <tr>
+                <td>Position Type</td>
+                <td th:text = "${choice.positionType}"></td>
+        </tr>
+            <tr>
+                <td>Skill</td>
+                <td th:text = "${choice.coreCompetency}"></td>
+            </tr>
+    </table>
+
+            <!-- TODO #2: Complete the View Jobs By Category Table. -->
+    <table>
+        <tr>
+            <td></td> <!-- Feel free to remove or modify this element if necessary. -->
+
+            <td th:each="category : ${tableChoices}">
+                <ul>
+                    <li th:each="item : ${category.value}">
+
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
 
 </div>
 
